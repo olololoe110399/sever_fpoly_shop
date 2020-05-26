@@ -1,0 +1,112 @@
+{{>sidebar}}
+<div class="main-panel">
+    {{>  nav}}
+    <div class="content">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-8">
+                    <div class="card">
+                        <div class="card-header card-header-info">
+                            <h4 class="card-title">Edit Profile</h4>
+                            <p class="card-category">Complete your profile</p>
+                        </div>
+                        <div class="card-body">
+                            {{>messages}}
+                            <form class="" method="POST" enctype="multipart/form-data">
+
+                                <div class="row">
+                                    <div class="col-md-5">
+                                        <div class="form-group">
+                                            <label class="bmd-label-floating">id</label>
+                                            <input id="id" value="{{this.admin._id}}" name="id" type="text"
+                                                class="form-control" disabled>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <div class="form-group">
+                                            <label class="bmd-label-floating">Username</label>
+                                            <input id="email" value="{{this.admin.email}}" name="email" type="email"
+                                                class="form-control" required>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="form-group">
+                                            <label class="bmd-label-floating">Full Name</label>
+                                            <input id="full_name" value="{{this.admin.full_name}}" name="full_name"
+                                                type="text" class="form-control" required>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <input type="date" value="{{this.admin.birth}}" id="birth" name="birth"
+                                                class="form-control" required>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label class="bmd-label-floating">Phone</label>
+                                            <input type="tel" value="{{this.admin.phone}}" id="phone" name="phone"
+                                                class="form-control" required>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <div class="form-group">
+                                            <label class="bmd-label-floating">Adress</label>
+                                            <input id="address" value="{{this.admin.address}}" name="address"
+                                                type="text" class="form-control" required>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <div class="form-group">
+                                            <label>About Me</label>
+                                            <div class="form-group">
+                                                <label class="bmd-label-floating"> Lamborghini Mercy, Your chick she so
+                                                    thirsty, I'm
+                                                    in that two seat Lambo.</label>
+                                                <textarea id="about" name="about" class="form-control" rows="5"
+                                                    required>{{this.admin.about}}</textarea>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <label for="customer-img"><b>Chose avatar image</b></label><br>
+                                <input type="file" name="image" id="profile-img" class="form-group" />
+                                <button type="submit" class="btn btn-info pull-right">Update Profile</button>
+                                <div class="clearfix"></div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card card-profile">
+                        <div class="card-avatar">
+                            <a href="javascript:;">
+                                <img class="img" src="https://scontent.fdad3-3.fna.fbcdn.net/v/t1.0-9/p720x720/69571113_782844778816078_3140658465416937472_o.jpg?_nc_cat=108&_nc_sid=85a577&_nc_ohc=xMeGHz91LLcAX-KkO3i&_nc_ht=scontent.fdad3-3.fna&_nc_tp=6&oh=582442edade4e9164c305a0b2378b975&oe=5EF2BF40" />
+                            </a>
+                        </div>
+                        <div class="card-body">
+                            <h6 class="card-category text-gray">Fresher Android</h6>
+                            <h4 class="card-title">Nguyen Ngoc Duy</h4>
+                            <p class="card-description">
+                                My goal is to be a passionate inspiring and creative developer that will be able to
+                                invent and innovate; also share and
+                                teach others in a way that they can be excited like I am about programming. Last but not
+                                least be a competent
+                                freelancer.
+                            </p>
+                            <a href="https://www.facebook.com/profile.php?id=100012716881882"
+                                class="btn btn-info btn-round">Follow</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    {{> footer}}
+</div>

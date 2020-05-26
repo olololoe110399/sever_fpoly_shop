@@ -1,0 +1,103 @@
+{{>sidebar}}
+<div class="main-panel">
+    {{>  nav}}
+    <div class="content">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="card">
+                        <div class="card-header card-header-info">
+                            <h3 class="card-title ">Add New Product</h3>
+                        </div>
+                        <div class="card-body">
+                            {{>messages}}
+                            <form action="product-add" method="post" enctype="multipart/form-data">
+                                <div class="form-group">
+                                    <label for="product_name" class="bmd-label-floating">Product Name</label>
+                                    <input type="text" class="form-control" value="{{product_name}}" id="product_name"
+                                        name="product_name" required>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="over_view" class="bmd-label-floating">Over view</label>
+                                    <textarea id="over_view" class="form-control" name="over_view"
+                                        cols="40" rows="5">{{over_view}}</textarea>
+                                </div>
+                                <div class="form-group">
+                                    <label for="vote_average" class="bmd-label-floating">Vote Average</label>
+                                    <input type="number" value="{{vote_average}}" class="form-control" id="vote_average"
+                                        name="vote_average" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="quantity" class="bmd-label-floating">Quantity</label>
+                                    <input type="number" value="{{quantity}}" class="form-control" id="quantity"
+                                        name="quantity" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="category" class="bmd-label-floating">Category</label>
+                                    <select id="category" name="category" class="custom-select custom-select">
+                                        {{#isSelected_category category}}
+                                        <option selected>Open this select category</option>
+                                        <option value="Promotion">Promotion</option>
+                                        <option value="Hot">Hot</option>
+                                        <option value="Selling">Selling</option>
+                                        <option value="Top rated">Top rated</option>
+                                        <option value="Good price">Good price</option>
+                                        {{/isSelected_category}}
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <input type="date" value="{{release_date}}" class="form-control" id="release_date"
+                                        name="release_date" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="genre" class="bmd-label-floating">Genres</label>
+                                    <select id="genre" name="genre" class="custom-select custom-select">
+                                        <option selected>Open this select genre</option>
+                                        {{#each genres}}
+
+                                        <label class="bmd-label-floating">{{ ../genre}}</label>
+                                        <option value="{{genre_id}}" {{isSelected_genre ../genre genre_id}}>
+                                            {{genre_name}}</option>
+                                        {{/each}}
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label for="producer" class="bmd-label-floating">Production companies</label>
+                                    <select id="producer" name="producer" class="custom-select custom-select">
+                                        <option selected>Open this select production company</option>
+                                        {{#each producers}}
+                                        <option value="{{producer_id}}"
+                                            {{isSelected_prodution ../producer producer_id}}>{{producer_name}}
+                                        </option>
+                                        {{/each}}
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label for="price" class="bmd-label-floating">Price</label>
+                                    <input type="number" value="{{price}}" class="form-control" id="price" name="price"
+                                        required>
+                                </div>
+                                <div class="col-md-12">
+                                    <label for="product-img"><b>Product Image</b></label><br>
+                                    <input type="file" name="image" id="product-img" class="" required>
+                                </div>
+                                <div class="col-md-12">
+                                    <label for="product-img2"><b>Product Image 2</b></label><br>
+                                    <input type="file" name="image2" id="product-img2" class="" required>
+                                </div>
+                                <div>
+                                    <div class="col-sm">
+                                        <button type="submit" class="btn btn-info float-right">Create</button>
+                                        <a href="products" class="btn btn-danger float-right">Cancel</a>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    {{> footer}}
+</div>
