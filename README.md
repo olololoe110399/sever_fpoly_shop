@@ -1,4 +1,4 @@
-# Sever Fpoly Shop
+# Server Fpoly Shop
 + Nodejs + Express + MongoDB
 + Screenshots APP
 
